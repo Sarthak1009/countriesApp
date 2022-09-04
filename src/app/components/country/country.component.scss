@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;900&display=swap");
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+$green: #2ecc71;
+$red: #e74c3c;
+$blue: #3498db;
+$yellow: #f1c40f;
+$purple: #8e44ad;
+$turquoise: #1abc9c;
+.backButton_wrapper{
+  display: flex;
+  padding-left: 30px;
+  .btn {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid $red;
+    border-radius: 0.6em;
+    color: $red;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1em 2.2em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      outline: 0;
+    }
+  }
+  .backButton{
+    border-color: $blue;
+    color: #fff;
+    box-shadow: 0 0 40px 40px $blue inset, 0 0 0 0 $blue;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 10px 0 $blue inset, 0 0 10px 4px $blue;
+    color: #222;
+    }
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  // height: 90vh;
+
+  .wrapper {
+    display: flex;
+    padding: 30px;
+    flex: 100%;
+    flex-wrap: wrap;
+    // justify-content: center;
+    .flag_wrapper {
+      padding-right: 30px;
+      margin-bottom: 20px;
+      flex: 0.4;
+      .flag {
+        img {
+          max-height: 350px;
+          max-width: 600px;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+    .content {
+      display: flex;
+      flex: 0.6;
+      width: 100%;
+      min-width: 525px;
+      .left_half {
+        flex: 50%;
+        width: 100%;
+        .title {
+          font-size: 32px;
+          font-weight: 700;
+        }
+        .contentData {
+          padding-top: 9px;
+          .row {
+            display: flex;
+            width: 100%;
+            padding-top: 16px;
+            .key {
+              font-weight: 700;
+              font-size: 18px;
+            }
+            .value {
+              font-size: 18px;
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+      .right_half {
+        flex: 50%;
+        .first {
+          padding-top: 68px !important;
+        }
+        .row {
+          display: flex;
+          width: 100%;
+          padding-top: 16px;
+          .key {
+            font-weight: 700;
+            font-size: 18px;
+          }
+          .value {
+            font-size: 18px;
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+.maps {
+  display: flex;
+  flex-wrap: wrap;
+  .border_countries {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .key {
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 700;
+    }
+    span {
+      padding-top: 10px;
+    }
+    button {
+      border-color: $blue;
+      box-shadow: 0 0 40px 40px $blue inset, 0 0 0 0 $blue;
+      transition: all 150ms ease-in-out;
+      color: #fff;
+      &:hover {
+        box-shadow: 0 0 10px 0 $blue inset, 0 0 10px 4px $blue;
+      color: #222;
+      }
+    }
+    .btn {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    // border: 2px solid $red;
+    border-radius: 0.6em;
+    color: #fff;
+    cursor: pointer;
+    // display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1em 2.2em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+      color: #222;
+      outline: 0;
+    }
+  }
+  }
+  .map {
+    padding-inline: 75px;
+    flex: 1;
+    max-width: 650px;
+    min-width: 350px;
+  }
+}

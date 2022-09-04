@@ -1,0 +1,22 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="wrapper">
+  <div class="search">
+    <input type="text" placeholder="Search by Country Name" [(ngModel)]="search" (keyup.enter)="onSearchClick(search)" (ngModelChange)="clearSearch(search)">
+  </div>
+  <div class="dropdown" (click)="onDropdownClick()">
+    <span>{{filterLabel}}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path
+          d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z" />
+      </svg>
+    </span>
+    <div class="dropdown-content" [ngClass]="{ 'show_dropdown': toggleRegion }">
+      <p (click)="getRegion('default')" *ngIf="filterLabel != 'Filter by Region'">Filter by Region</p>
+      <p (click)="getRegion('Africa')" *ngIf="filterLabel != 'Africa'">Africa</p>
+      <p (click)="getRegion('America')" *ngIf="filterLabel != 'America'">America</p>
+      <p (click)="getRegion('Asia')" *ngIf="filterLabel != 'Asia'">Asia</p>
+      <p (click)="getRegion('Europe')" *ngIf="filterLabel != 'Europe'">Europe</p>
+      <p (click)="getRegion('Oceania')" *ngIf="filterLabel != 'Oceania'">Oceania</p>
+    </div>
+  </div>
+</div>

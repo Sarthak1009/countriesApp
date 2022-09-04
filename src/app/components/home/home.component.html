@@ -1,0 +1,46 @@
+<!-- <p *ngFor="let countryData of countryDetails">{{countryData.name.common}}</p> -->
+<app-loading *ngIf="loading"></app-loading>
+  <div class="wrapper">
+    <div
+      class="card_wrapper"
+      *ngFor="let countryDetail of countryDetails; let i = index"
+      [ngClass]="i > number ? 'dn' : ''"
+    >
+      <div class="card" (click)="onCountryClick(i)">
+        <div class="image_wrapper">
+          <div class="image">
+            <img src="{{ countryDetail?.flags.png }}" alt="" />
+          </div>
+          <div class="content">
+            <div class="title">
+              <p>{{ countryDetail?.name.common }}</p>
+            </div>
+            <div class="details">
+              <div class="row">
+                <div class="key">Population:</div>
+                <div class="value">
+                  {{ countryDetail.population | number }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="key">Region:</div>
+                <div class="value">
+                  {{ countryDetail?.region }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="key">Capital:</div>
+                <div class="value" *ngIf="countryDetail?.capital">
+                  {{ countryDetail?.capital[0] }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="loadmore_wrapper" *ngIf="number <= 255">
+    <button (click)="onLoadMore()" class="btn loadmore">Load more</button>
+  </div>
+
